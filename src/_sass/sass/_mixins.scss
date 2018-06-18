@@ -1,0 +1,54 @@
+/* mixins
+--------------------------------------------------------*/
+@mixin linkColor_define($color, $hcolor) {
+     color: $color;
+     &:hover, &:active, &:focus {
+         color: $hcolor;
+     }
+}
+
+@mixin linkColor_define_underline($color, $hcolor) {
+     color: $color;
+     &:hover, &:active, &:focus {
+         color: $hcolor;
+         text-decoration: underline;
+     }
+}
+
+@mixin linkBgColor_define($color, $hcolor)  {
+     background-color: $color;
+     &:hover, &:active, &:focus {
+         background-color: $hcolor;
+     }
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+       -o-border-radius: $radius;
+          border-radius: $radius;
+}
+
+
+$sidebav-transition-time: 0.3s;
+$sidebav-transition-method: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+$sidebav-transition-easeInQuart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+
+@mixin transition($transition-property, $transition-time, $method) {
+    -webkit-transition: $transition-property $transition-time $method;
+    -moz-transition: $transition-property $transition-time $method;
+    -ms-transition: $transition-property $transition-time $method;
+    -o-transition: $transition-property $transition-time $method;
+    transition: $transition-property $transition-time $method;
+}
+
+
+@mixin hp-opacity($trans) {
+  filter: alpha(opactiy=($trans * 100));
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$trans * 100})";
+  -moz-opacity: $trans;
+  -khtml-opacity: $trans;
+  opacity: $trans;
+}
+

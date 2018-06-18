@@ -1,0 +1,174 @@
+@charset "UTF-8";
+
+
+
+/* オリジナルのレイアウト
+----------------------------------------*/
+html{
+  font-size: 62.5%;
+  line-height: 160%;
+}
+
+body {
+  color: #333333;
+  background: #ffffff;
+  font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 1.75;
+  min-width: 1000px;
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+
+body{
+  ._min{
+    font-family: "ヒラギノ明朝 ProN W6", "HiraMinProN-W6", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
+  }
+
+  ._gochic{
+  font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+  }
+}
+
+
+@media only screen and (max-width: 736px) {
+  body {
+    height: 100%;
+    min-width: 0;
+  }
+  
+}
+
+a {
+  position: relative;
+  text-decoration: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #333333;
+}
+a:link, a:visited {
+  text-decoration: underline;
+}
+a:hover, a:active {
+  text-decoration: none;
+}
+
+a{
+  img{
+    @include transition(all, .7s, cubic-bezier(0.190, 1.000, 0.220, 1.000));
+    // @include transition(opacity, 0.15s, linear);
+  }
+}
+
+
+a:hover img,
+.btn_block a:hover {
+  @include hp-opacity(0.6);
+
+}
+
+a:hover:not(:target) img,
+.btn_block a:hover {
+  @include hp-opacity(0.6);
+}
+
+
+/*表示
+----------------------------------------*/
+/* only pc */
+.visible_pc {
+  display: block !important;
+}
+/* SPだけ表示 */
+.visible_sp {
+  display: none !important;
+}
+
+/* PCだけ表示 */
+.visible_pc_inline {
+  display: inline !important;
+}
+/* SPだけ表示 */
+.visible_sp_inline {
+  display: none !important;
+}
+
+@media only screen and (max-width: 736px) {
+  /* PCだけ表示 */
+  .visible_pc {
+    display: none !important;
+  }
+  /* SPだけ表示 */
+  .visible_sp {
+    display: block !important;
+  }
+
+  /* PCだけ表示 */
+  .visible_pc_inline {
+    display: none !important;
+  }
+  /* SPだけ表示 */
+  .visible_sp_inline {
+    display: inline !important;
+  }
+  /* SPだけ改行 */
+  .sp_br {
+    display: block;
+  }
+  img {
+    // width: 100%;
+    height: auto;
+    max-width: 100%;
+    width: auto;  
+  }
+}
+
+
+/*画像のfloat
+----------------------------------------*/
+
+.img_float_l {
+  float: left;
+  *display: inline;
+  *zoom: 1;
+  margin-right: 25px;
+  margin-bottom: 25px;
+  // margin-right: 40px;
+  // margin-bottom: 40px;
+  z-index: 2;
+}
+.img_float_r {
+  float: right;
+  *display: inline;
+  *zoom: 1;
+  margin-right: 25px;
+  margin-bottom: 25px;
+  // margin-left: 40px;
+  // margin-bottom: 40px;
+  z-index: 2;
+}
+
+@media only screen and (max-width: 736px) {
+  .img_float_l,
+  .img_float_r {
+    display: block;
+    width: 43.103%;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+  }
+  .img_float_l {
+    margin-right: 15px;
+  }
+  .img_float_r {
+    margin-left: 15px;
+  }
+  .img_float_l img,
+  .img_float_r img  {
+    display: block;
+    margin: 0 auto;
+  }
+}
